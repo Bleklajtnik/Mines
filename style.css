@@ -1,0 +1,130 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  background-color: #1a2c38;
+}
+section {
+  background-color: #213742;
+  width: 300px;
+  padding: 20px;
+  border-radius: 10px 0 0 10px;
+}
+main {
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  background-color: #10212d;
+  width: 1500px;
+  border-radius: 10px;
+}
+.mineWrapper {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px;
+  margin: 0 auto;
+  padding: 20px 0;
+  background-color: #10212d;
+  justify-content: center;
+}
+.mineSquare {
+  position: relative;
+  width: 130px;
+  height: 130px;
+  background-color: #2f4552;
+  border-radius: 10px 10px 0 0;
+  transition: 0.3s;
+}
+.mineSquare::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  width: 100%;
+  height: 8px;
+  background-color: #1f3742;
+  border-radius: 0 0 8px 8px;
+}
+.mineSquare:hover {
+  background-color: #557186;
+  translate: 0 -10px;
+}
+.mineSquare.win {
+  background-color: #0bfb02;
+}
+.mineSquare.lose {
+  background-color: red;
+}
+.numOfMines,
+.balanceContainer,
+.betContainer,
+.cashoutContainer {
+  line-height: 30px;
+  /* border: 1px solid black; */
+  margin-bottom: 10px;
+  color: #97acbe;
+  font-size: 18px;
+}
+.betContainer {
+  display: flex;
+  flex-direction: column;
+}
+.actionBtn {
+  width: 100%;
+  line-height: 50px;
+  background-color: #0bfb02;
+  border-radius: 5px;
+  border: none;
+}
+#bet {
+  background-color: #071824;
+  line-height: 50px;
+  padding-left: 10px;
+  border: 0.5px #557186 solid;
+  border-radius: 5px;
+  color: white;
+  font-size: 18px;
+}
+.balanceContainer {
+  display: flex;
+  flex-direction: column;
+}
+.balance {
+  display: flex;
+  background-color: #071824;
+  line-height: 50px;
+  padding-left: 10px;
+  border: 0.5px #557186 solid;
+  border-radius: 5px;
+  color: white;
+  padding-left: 5px;
+}
+.numOfMines {
+  display: flex;
+  flex-direction: column;
+}
+#mines {
+  background-color: #071824;
+  height: 50px;
+  padding: 0 10px;
+  border: 0.5px #557186 solid;
+  border-radius: 5px;
+  color: white;
+  font-size: 18px;
+}
+.cashout {
+  background-color: #071824;
+  height: 50px;
+  line-height: 50px;
+  padding: 0 10px;
+  border: 0.5px #557186 solid;
+  border-radius: 5px;
+  color: white;
+  font-size: 18px;
+}
+.cashoutContainer {
+  transition: 0.3s;
+}
