@@ -122,7 +122,6 @@ const clickingTiles = (square, index) => {
   }
 };
 
-
 mineSquares.forEach((square, index) => {
   square.addEventListener('click', () => clickingTiles(square, index));
 });
