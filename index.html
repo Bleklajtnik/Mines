@@ -3,19 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://kit.fontawesome.com/fed5fec1a5.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css" />
     <title>Document</title>
   </head>
   <body>
     <main>
       <section>
+        
         <div class="balanceContainer">
           <p>Balance</p>
-          <div class="balance"><div class="balanceOutput">1000</div>zł</div>
+          <div class="balance">
+            <div class="balanceOutput">1000</div>
+            zł
+          </div>
         </div>
         <div class="betContainer">
           <label for="bet">Bet Amount</label>
           <input type="text" id="bet" name="bet" value="1" />
+          <div class="inputCover"></div>
         </div>
         <div class="numOfMines">
           <label for="mines">Mines</label>
@@ -45,39 +57,127 @@
             <option value="23">23</option>
             <option value="24">24</option>
           </select>
+          <div class="inputCover"></div>
         </div>
         <div class="cashoutContainer" style="display: none">
           <p>Total profit (<span class="multiplier">1.00</span>x)</p>
           <div class="cashout"></div>
         </div>
+        
         <button class="actionBtn">Bet</button>
       </section>
       <section class="mineWrapper">
-        <div class="mineSquare"></div>
-        <div class="mineSquare"></div>
-        <div class="mineSquare"></div>
-        <div class="mineSquare"></div>
-        <div class="mineSquare"></div>
-        <div class="mineSquare"></div>
-        <div class="mineSquare"></div>
-        <div class="mineSquare"></div>
-        <div class="mineSquare"></div>
-        <div class="mineSquare"></div>
-        <div class="mineSquare"></div>
-        <div class="mineSquare"></div>
-        <div class="mineSquare"></div>
-        <div class="mineSquare"></div>
-        <div class="mineSquare"></div>
-        <div class="mineSquare"></div>
-        <div class="mineSquare"></div>
-        <div class="mineSquare"></div>
-        <div class="mineSquare"></div>
-        <div class="mineSquare"></div>
-        <div class="mineSquare"></div>
-        <div class="mineSquare"></div>
-        <div class="mineSquare"></div>
-        <div class="mineSquare"></div>
-        <div class="mineSquare"></div>
+        <div class="mineSquare">
+          <div class="overlay"></div>
+          <i class="fa-solid"></i>
+        </div>
+        <div class="mineSquare">
+          <div class="overlay"></div>
+          <i class="fa-solid"></i>
+        </div>
+        <div class="mineSquare">
+          <div class="overlay"></div>
+          <i class="fa-solid"></i>
+        </div>
+        <div class="mineSquare">
+          <div class="overlay"></div>
+          <i class="fa-solid"></i>
+        </div>
+        <div class="mineSquare">
+          <div class="overlay"></div>
+          <i class="fa-solid"></i>
+        </div>
+        <div class="mineSquare">
+          <div class="overlay"></div>
+          <i class="fa-solid"></i>
+        </div>
+        <div class="mineSquare">
+          <div class="overlay"></div>
+          <i class="fa-solid"></i>
+        </div>
+        <div class="mineSquare">
+          <div class="overlay"></div>
+          <i class="fa-solid"></i>
+        </div>
+        <div class="mineSquare">
+          <div class="overlay"></div>
+          <i class="fa-solid"></i>
+        </div>
+        <div class="mineSquare">
+          <div class="overlay"></div>
+          <i class="fa-solid"></i>
+        </div>
+        <div class="mineSquare">
+          <div class="overlay"></div>
+          <i class="fa-solid"></i>
+        </div>
+        <div class="mineSquare">
+          <div class="overlay"></div>
+          <i class="fa-solid"></i>
+        </div>
+        <div class="mineSquare">
+          <div class="overlay"></div>
+          <i class="fa-solid"></i>
+        </div>
+        <div class="mineSquare">
+          <div class="overlay"></div>
+          <i class="fa-solid"></i>
+        </div>
+        <div class="mineSquare">
+          <div class="overlay"></div>
+          <i class="fa-solid"></i>
+        </div>
+        <div class="mineSquare">
+          <div class="overlay"></div>
+          <i class="fa-solid"></i>
+        </div>
+        <div class="mineSquare">
+          <div class="overlay"></div>
+          <i class="fa-solid"></i>
+        </div>
+        <div class="mineSquare">
+          <div class="overlay"></div>
+          <i class="fa-solid"></i>
+        </div>
+        <div class="mineSquare">
+          <div class="overlay"></div>
+          <i class="fa-solid"></i>
+        </div>
+        <div class="mineSquare">
+          <div class="overlay"></div>
+          <i class="fa-solid"></i>
+        </div>
+        <div class="mineSquare">
+          <div class="overlay"></div>
+          <i class="fa-solid"></i>
+        </div>
+        <div class="mineSquare">
+          <div class="overlay"></div>
+          <i class="fa-solid"></i>
+        </div>
+        <div class="mineSquare">
+          <div class="overlay"></div>
+          <i class="fa-solid"></i>
+        </div>
+        <div class="mineSquare">
+          <div class="overlay"></div>
+          <i class="fa-solid"></i>
+        </div>
+        <div class="mineSquare">
+          <div class="overlay"></div>
+          <i class="fa-solid"></i>
+        </div>
+        <div class="winResults" style="display: none">
+          <div class="winResultMultiplierContainer">
+            <p class="winResultMultiplier">1.71</p>
+            x
+          </div>
+          <div class="resultLine"></div>
+          <div class="winResultPrizeContainer">
+            <p class="winResultPrize">358.24</p>
+            zł
+          </div>
+        </div>
       </section>
     </main>
     <script src="script.js"></script>
