@@ -27,7 +27,8 @@ let totalBombs;
 let gameStarted = false;
 let balanceChecked;
 let mineSquares = [];
-
+const winSound = new Audio('winSound.wav');
+const loseSound = new Audio('loseSound.wav');
 const createTile = (index) => {
   const tileSquare = document.createElement('div');
   const tileOverlay = document.createElement('div');
@@ -157,6 +158,8 @@ const toggleWinResultView = () => {
   winResult.style.display = 'flex';
   winResultMultiplier.textContent = newMultiplier.toFixed(2);
   winResultPrize.textContent = winPrize;
+  winSound.currentTime = 0;
+  winSound.play();
   setTimeout(() => {
     winResult.style.display = 'none';
   }, 1500);
@@ -206,14 +209,20 @@ const clickingTiles = (square, index) => {
   if (losingSquares.includes(index)) {
     square.classList.add('revealed');
     tileValue.classList.add('fa-bomb');
+    setTimeout(() => {
+      loseSound.play();
+    }, 300);
     toggleGameBtnValue();
-
     revealSquares();
-
     setTimeout(() => {
       endGame();
     }, 1500);
   } else {
+    winSound.currentTime = 0;
+    setTimeout(() => {
+      winSound.play();
+    }, 500);
+
     square.classList.add('win', 'revealed');
     tileValue.classList.add('fa-gem');
     winCounter++;
