@@ -316,7 +316,7 @@ main {
     translate: -50% -50%;
     background-color: #10212d;
     width: 768px;
-    /* height: 90vh; */
+    height: 150vh;
     border-radius: 10px;
     scale: 0.6;
   }
@@ -326,7 +326,8 @@ main {
     background-color: #213742;
     width: 500px;
     padding: 20px;
-    border-radius: 0 0 10px 10px;
+    border-radius: 10px;
+    margin-bottom: 50px;
   }
   .mobileWrapper {
     width: 200px;
