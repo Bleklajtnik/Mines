@@ -221,7 +221,7 @@ const clickingTiles = (square, index) => {
     winSound.currentTime = 0;
     setTimeout(() => {
       winSound.play();
-    }, 500);
+    }, 300);
 
     square.classList.add('win', 'revealed');
     tileValue.classList.add('fa-gem');
