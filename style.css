@@ -338,8 +338,7 @@ main {
   .actionBtn {
     font-size: 20px;
   }
-  .overlay:hover {
-    translate: 0 0;
-    background-color: initial;
+  .overlay{
+    pointer-events: none;
   }
 }
