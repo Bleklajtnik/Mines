@@ -137,15 +137,18 @@ const handleActionButton = () => {
   }
 };
 const toggleBlockInteractions = () => {
-  blockBlocks.forEach((block) => {
-    block.classList.toggle('blockInteraction');
-  });
-  if (betInput.style.color === 'rgb(151, 172, 190)') {
-    betInput.style.color = '#fff';
-    mineNumber.style.color = '#fff';
-  } else {
+  if (gameStarted) {
+    blockBlocks.forEach((block) => {
+      block.classList.add('blockInteraction');
+    });
     betInput.style.color = '#97acbe';
     mineNumber.style.color = '#97acbe';
+  } else {
+    blockBlocks.forEach((block) => {
+      block.classList.remove('blockInteraction');
+    });
+    betInput.style.color = '#fff';
+    mineNumber.style.color = '#fff';
   }
 };
 const clickingTiles = (square, index) => {
