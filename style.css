@@ -336,9 +336,10 @@ main {
     margin-top: 40px;
   }
   .actionBtn {
+    color: black;
     font-size: 20px;
   }
-  .overlay{
+  .overlay {
     pointer-events: none;
   }
 }
