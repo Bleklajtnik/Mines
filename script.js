@@ -1,6 +1,7 @@
 const mineSquares = document.querySelectorAll('.mineSquare');
 const mineNumber = document.querySelector('#mines');
 const gameButton = document.querySelector('.actionBtn');
+const gameButtonValue = document.querySelector('.actionBtnValue');
 const viewBalance = document.querySelector('.balanceOutput');
 const betInput = document.querySelector('#bet');
 const cashoutP = document.querySelector('.cashout');
@@ -11,6 +12,7 @@ const winResultMultiplier = document.querySelector('.winResultMultiplier');
 const winResultPrize = document.querySelector('.winResultPrize');
 const revealedTile = document.querySelectorAll('.fa-solid');
 const blockBlocks = document.querySelectorAll('.inputCover');
+const cashoutBlock = document.querySelector('.cashoutCover');
 let isGameActive = false;
 let losingSquares = [];
 let balance = 1000.0;
@@ -27,7 +29,7 @@ const startGame = () => {
   winCounter = 0;
   gameStarted = true;
   isGameActive = true;
-  gameButton.textContent = 'Cashout';
+  gameButtonValue.textContent = 'Cashout';
   cashoutContainer.style = 'display: block;';
   toggleBlockInteractions();
   randomizeMines();
@@ -51,7 +53,7 @@ const resetSettings = () => {
   totalTiles = 25;
   winPrize = 0;
   cashoutP.textContent = '';
-  gameButton.textContent = 'Bet';
+  gameButtonValue.textContent = 'Bet';
   multiplierOutput.textContent = '1.00';
   cashoutContainer.style = 'display: none;';
 };
@@ -110,8 +112,10 @@ const winUpdate = (revealedTiles, totalTiles, totalBombs) => {
 const cashout = () => {
   balance = Number(balance) + Number(winPrize);
   viewBalance.textContent = balance.toFixed(2);
+
   endGame();
 };
+
 const checkBalance = () => {
   if (betValue > balance) {
     alert('Nie masz wystarczających środków na koncie');
@@ -127,12 +131,20 @@ const toggleWinResultView = () => {
     winResult.style.display = 'none';
   }, 1500);
 };
+const toggleGameBtnValue = () => {
+  gameButtonValue.innerHTML = '<i class="fa-solid fa-bomb"></i>';
+  cashoutBlock.classList.add('blockInteraction');
+  setTimeout(() => {
+    cashoutBlock.classList.remove('blockInteraction');
+  }, 1500);
+};
 const handleActionButton = () => {
   if (!isGameActive && checkBalance()) {
     startGame();
   } else {
     revealSquares();
     toggleWinResultView();
+    toggleGameBtnValue();
     setTimeout(cashout, 1500);
   }
 };
@@ -162,7 +174,10 @@ const clickingTiles = (square, index) => {
   if (losingSquares.includes(index)) {
     square.classList.add('revealed');
     tileValue.classList.add('fa-bomb');
+    toggleGameBtnValue();
+
     revealSquares();
+
     setTimeout(() => {
       endGame();
     }, 1500);
