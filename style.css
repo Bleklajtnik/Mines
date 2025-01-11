@@ -354,7 +354,4 @@ main {
     position: relative;
     margin-top: 40px;
   }
-  .overlay:hover {
-    translate: 0 0;
-  }
 }
