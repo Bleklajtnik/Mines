@@ -16,7 +16,7 @@ const cashoutBlock = document.querySelector('.cashoutCover');
 let isGameActive = false;
 let losingSquares = [];
 let balance = 1000.0;
-let betValue = parseInt(betInput.value, 10);
+let betValue = parseFloat(betInput.value, 10);
 const multiplier = 0.99;
 let newMultiplier = 1;
 let winCounter = 0;
@@ -24,6 +24,7 @@ let winPrize = 0;
 let totalTiles = 25;
 let totalBombs;
 let gameStarted = false;
+let balanceChecked;
 
 const startGame = () => {
   winCounter = 0;
@@ -118,7 +119,7 @@ const cashout = () => {
 
 const checkBalance = () => {
   if (betValue > balance) {
-    alert('Nie masz wystarczających środków na koncie');
+    // alert('Nie masz wystarczających środków na koncie');
     return false;
   }
   return true;
@@ -141,6 +142,8 @@ const toggleGameBtnValue = () => {
 const handleActionButton = () => {
   if (!isGameActive && checkBalance()) {
     startGame();
+  } else if (!checkBalance()) {
+    alert('Nie masz wystarczających środków na koncie');
   } else {
     revealSquares();
     toggleWinResultView();
