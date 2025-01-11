@@ -143,7 +143,16 @@ main {
   flex-direction: column;
   position: relative;
 }
-.actionBtnContainer{
+#bet {
+  background-color: #071824;
+  line-height: 50px;
+  padding-left: 10px;
+  border: 0.5px #557186 solid;
+  border-radius: 5px;
+  color: white;
+  font-size: 18px;
+}
+.actionBtnContainer {
   position: relative;
 }
 .actionBtn {
@@ -154,15 +163,7 @@ main {
   border: none;
   cursor: pointer;
 }
-#bet {
-  background-color: #071824;
-  line-height: 50px;
-  padding-left: 10px;
-  border: 0.5px #557186 solid;
-  border-radius: 5px;
-  color: white;
-  font-size: 18px;
-}
+
 .balanceContainer {
   display: flex;
   flex-direction: column;
@@ -202,6 +203,7 @@ main {
   font-size: 18px;
 }
 .cashoutContainer {
+  display: none;
   position: relative;
   transition: 0.3s;
 }
@@ -262,9 +264,8 @@ main {
   top: 0;
   left: 0;
   z-index: 3;
-  /* background-color: #fff; */
 }
-@media (max-width:1650px){
+@media (max-width: 1650px) {
   main {
     display: flex;
     position: absolute;
@@ -277,7 +278,7 @@ main {
     scale: 0.8;
   }
 }
-@media (max-width:1350px){
+@media (max-width: 1350px) {
   main {
     display: flex;
     position: absolute;
@@ -290,7 +291,7 @@ main {
     scale: 0.7;
   }
 }
-@media (max-width:1150px){
+@media (max-width: 1279px) {
   main {
     display: flex;
     position: absolute;
@@ -301,5 +302,55 @@ main {
     width: 1500px;
     border-radius: 10px;
     scale: 0.6;
+  }
+}
+@media (max-width: 768px) {
+  main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    background-color: #10212d;
+    width: 768px;
+    /* height: 90vh; */
+    border-radius: 10px;
+    scale: 0.6;
+  }
+  section {
+    display: flex;
+    justify-content: space-around;
+    background-color: #213742;
+    width: 500px;
+    padding: 20px;
+    border-radius: 0 0 10px 10px;
+  }
+  .mobileWrapper {
+    width: 200px;
+  }
+  .mineSquare {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background-color: #081724;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 18px;
+  }
+  .mineSquare i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    font-size: 75px;
+    transform: scale(0);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  .actionBtnContainer {
+    position: relative;
+    margin-top: 40px;
   }
 }

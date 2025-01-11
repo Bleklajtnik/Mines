@@ -16,32 +16,37 @@
   <body>
     <main>
       <section>
-        <div class="balanceContainer">
-          <p>Balance</p>
-          <div class="balance">
-            <div class="balanceOutput">1000</div>
-            zł
+        <div class="mobileWrapper">
+          <div class="balanceContainer">
+            <p>Balance</p>
+            <div class="balance">
+              <div class="balanceOutput">1000</div>
+              zł
+            </div>
+          </div>
+          <div class="betContainer">
+            <label for="bet">Bet Amount</label>
+            <input type="text" id="bet" name="bet" value="1" />
+            <div class="inputCover"></div>
+            <div class="popupInfo"></div>
           </div>
         </div>
-        <div class="betContainer">
-          <label for="bet">Bet Amount</label>
-          <input type="text" id="bet" name="bet" value="1" />
-          <div class="inputCover"></div>
-        </div>
-        <div class="numOfMines">
-          <label for="mines">Mines</label>
-          <select name="mines" id="mines"></select>
-          <div class="inputCover"></div>
-        </div>
-        <div class="cashoutContainer" style="display: none">
-          <p>Total profit (<span class="multiplier">1.00</span>x)</p>
-          <div class="cashout"></div>
-        </div>
-        <div class="actionBtnContainer">
-          <button class="actionBtn">
-            <p class="actionBtnValue">Bet</p>
-          </button>
-          <div class="cashoutCover"></div>
+        <div class="mobileWrapper">
+          <div class="numOfMines">
+            <label for="mines">Mines</label>
+            <select name="mines" id="mines"></select>
+            <div class="inputCover"></div>
+          </div>
+          <div class="cashoutContainer">
+            <p>Total profit (<span class="multiplier">1.00</span>x)</p>
+            <div class="cashout"></div>
+          </div>
+          <div class="actionBtnContainer">
+            <button class="actionBtn">
+              <p class="actionBtnValue">Bet</p>
+            </button>
+            <div class="cashoutCover"></div>
+          </div>
         </div>
       </section>
       <section class="mineWrapper">
