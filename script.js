@@ -1,4 +1,5 @@
-const mineSquares = document.querySelectorAll('.mineSquare');
+// const mineSquares = document.querySelectorAll('.mineSquare');
+const mineSquaresContainer = document.querySelector('.mineWrapper');
 const mineNumber = document.querySelector('#mines');
 const gameButton = document.querySelector('.actionBtn');
 const gameButtonValue = document.querySelector('.actionBtnValue');
@@ -25,7 +26,35 @@ let totalTiles = 25;
 let totalBombs;
 let gameStarted = false;
 let balanceChecked;
+let mineSquares = [];
 
+const createTile = (index) => {
+  const tileSquare = document.createElement('div');
+  const tileOverlay = document.createElement('div');
+  const tileIcon = document.createElement('i');
+  tileSquare.classList.add('mineSquare');
+  tileOverlay.classList.add('overlay');
+  tileIcon.classList.add('fa-solid');
+  tileSquare.appendChild(tileOverlay);
+  tileSquare.appendChild(tileIcon);
+  mineSquaresContainer.prepend(tileSquare);
+  return tileSquare;
+};
+const createBoard = () => {
+  for (let i = 0; i < 25; i++) {
+    const newTile = createTile(i);
+    mineSquares.push(newTile);
+  }
+};
+const createOptions = () => {
+  for (let i = 1; i < 25; i++) {
+    const option = document.createElement('option');
+    option.setAttribute('value', i);
+    option.textContent = i;
+    mineNumber.appendChild(option);
+  }
+};
+createOptions();
 const startGame = () => {
   winCounter = 0;
   gameStarted = true;
@@ -192,6 +221,7 @@ const clickingTiles = (square, index) => {
   }
 };
 
+createBoard();
 mineSquares.forEach((square, index) => {
   square.addEventListener('click', () => clickingTiles(square, index));
 });
