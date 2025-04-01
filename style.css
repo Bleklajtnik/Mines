@@ -304,13 +304,13 @@ main {
     scale: 0.6;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   main {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 670px;
+    width: 870px;
     height: 120vh;
   }
   section {
